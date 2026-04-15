@@ -18,7 +18,7 @@ def interactive_mode():
         description = input("Please provide a code description")
 
         if description:
-            description.strip()
+            description = description.strip()
         else:
             print("Code decription is empty. Please try again.")
             print("")
@@ -28,10 +28,10 @@ def interactive_mode():
         with_tests_input = ""
         
         while True:
-            with_tests_input = input("Would you like tests to be generated?(y/n)")
+            with_tests_input = input("Would you like tests to be generated?(y/n): ")
 
             if with_tests_input:
-                with_tests_input.strip()
+                with_tests_input = with_tests_input.strip()
             if with_tests_input.lower() == "y":
                 with_tests = True
                 break
@@ -47,18 +47,41 @@ def interactive_mode():
             filename = input("Filename: ")
 
             if filename:
-                filename.strip()
+                filename = filename.strip()
+            else:
+                break
 
+            forbidden_character_found = False
             for char in ['\\', '/', ':', '*', '?', '"', '<', '>', '|']:
                 if char in filename:
                     print(f"Filename containts a forbidden character: '{char}'")
                     print("Please try again. File cannot be saved.")
                     print("")
-                    continue
+                    forbidden_character_found = True
+                    break
+            
+            if forbidden_character_found:
+                continue
+            else:
+                break
 
+        code, tests = generate_code(description, with_tests, filename)
+
+        print("\n-- Generated Code --\n")
+        print(code)
+
+        if tests:
+            print("\n-- Generated Tests --\n")
+            print(tests)
+
+        again = input("Would you like to continue generating code? (y/n): ")
+
+        if again:
+            again = again.strip().lower()
+        if not again.startswith("y"):
+            print("Exit...")
             break
-
-        generate_code(description, with_tests, filename)
+        
 
     
 
