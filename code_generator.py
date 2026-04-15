@@ -83,5 +83,30 @@ def interactive_mode():
             break
         
 
+def main():
+    parser = ArgumentParser(prog= "Python Code Generator",
+                            description= "Python Code Generator from natural language")
+    parser.add_argument("filename", nargs="?", help="Short description of the code that will be generated")
+    parser.add_argument("--with-tests", action="store_value", help= "Generate tests for the generated code")
+    parser.add_argument("--save", metavar= "FILE", help= "Filename to save the generated code")
+    parser.add_argument("-i", "--interactive", action= "store_true", help= "Run in interactive mode")
+
+    args = parser.parse_args()
+
+    if args.interactive or not args.description:
+        interactive_mode()
+        return 
     
+    code, tests = generate_code(
+        description= args.description,
+        with_tests = args.with_tests,
+        filename= args.save
+    )
+
+    print("\n-- Generated Code --\n")
+    print(code)
+
+    if args.with_tests and tests:
+        print("\n-- Generated Tests --\n")
+        print(tests)
 
