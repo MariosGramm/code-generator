@@ -59,6 +59,10 @@ def clean_code_output(response : str) -> str:
 
 #Save code to file
 def save_code(code: str, filename: str):
+
+    if not filename.endswith(".py"):
+        filename = f"{filename}.py"
+
     with open(filename, "w", encoding="utf-8") as f:
         f.write(code)
 
