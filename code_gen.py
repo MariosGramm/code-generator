@@ -2,13 +2,19 @@ from prompts import CODE_GENERATION_PROMPT, TEST_GENERATION_PROMPT
 from openai import OpenAI
 from dotenv import load_dotenv
 from pathlib import Path
-import os, re, json, sys
+import os, re, json, sys 
 
 load_dotenv(Path.cwd() / ".env")
 
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    print("Could not find your OpenAI API key! Please add an .env file or set the environment variable OPENAI_API_KEY.")
+    print("""
+OpenAI API Key Not Found!
+
+You can get an OpenAI API key from: https://platform.openai.com/api-keys
+
+""")
+    input("Press Enter to exit...")
     sys.exit(1)
 
 #OpenAI Client creation
