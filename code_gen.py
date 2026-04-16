@@ -8,7 +8,8 @@ load_dotenv(Path.cwd() / ".env")
 
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    raise ValueError("Could not fetch api key from .env file")
+    print("Could not find your OpenAI API key! Please add an .env file or set the environment variable OPENAI_API_KEY.")
+    exit(1)
 
 #OpenAI Client creation
 def try_get_client(key : str) -> OpenAI:

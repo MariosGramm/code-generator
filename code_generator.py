@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 from code_gen import generate_code as code_generation
 from code_gen import save_code
 
+
 def generate_code(description: str, with_tests: bool = False, filename: str = None):
     code, tests = code_generation(description)
 
