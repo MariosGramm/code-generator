@@ -25,10 +25,11 @@ You do not need to have Python installed on your system to run the installer.
 
 1. **Download the Installer**  
    Download the installer in the releases section of this repository : https://github.com/MariosGramm/code-generator/releases
-2. Double-click the `installer.exe` file and follow the steps in the installation wizard.
-3. During installation, you will be prompted to enter your OpenAI API key.  
+   Unzip the folder and place the `installer.exe` and the `code_generator.exe` in the same folder.
+3. Double-click the `installer.exe` file and follow the steps in the installation wizard.
+4. During installation, you will be prompted to enter your OpenAI API key.  
    - If you do not have an API key yet, you can create one at: [OpenAI API Keys](https://platform.openai.com/api-keys)
-4. After installation, open the program from the Start Menu or your Desktop shortcut.
+5. After installation, open the program from the Start Menu or your Desktop shortcut.
 
 ## Usage
 
