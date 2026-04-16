@@ -19,7 +19,7 @@
 ## Installation
 
 1. **Download the Installer**  
-   [Download the installer here](<LINK_TO_YOUR_INSTALLER>)
+   [Download the installer here]([<LINK_TO_YOUR_INSTALLER>](https://github.com/MariosGramm/code-generator/releases/tag/v1.0.0))
 2. Double-click the `installer.exe` file and follow the steps in the installation wizard.
 3. During installation, you will be prompted to enter your OpenAI API key.  
    - If you do not have an API key yet, you can create one at: [OpenAI API Keys](https://platform.openai.com/api-keys)
