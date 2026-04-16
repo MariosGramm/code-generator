@@ -15,7 +15,7 @@ def generate_code(description: str, with_tests: bool = False, filename: str = No
     
 def interactive_mode():
     while True:
-        description = input("Please provide a code description")
+        description = input("Please provide a code description: ")
 
         if description:
             description = description.strip()
@@ -38,11 +38,14 @@ def interactive_mode():
             elif with_tests_input.lower() == "n":
                 with_tests = False
                 break
+            print("")
             print("Please provide a valid answer (y/n) or (Y/N)")
         
         while True:
+            print("")
             print("Please provide a filename for the code to be saved at.")
             print("If you don't want the code to be saved, just continue by pressing enter.")
+            print("")
 
             filename = input("Filename: ")
 
@@ -56,7 +59,6 @@ def interactive_mode():
                 if char in filename:
                     print(f"Filename containts a forbidden character: '{char}'")
                     print("Please try again. File cannot be saved.")
-                    print("")
                     forbidden_character_found = True
                     break
             
@@ -74,13 +76,20 @@ def interactive_mode():
             print("\n-- Generated Tests --\n")
             print(tests)
 
-        again = input("Would you like to continue generating code? (y/n): ")
+        while True:
+            print("")
+            again = input("Would you like to continue generating code? (y/n): ")
 
-        if again:
-            again = again.strip().lower()
-        if not again.startswith("y"):
-            print("Exit...")
-            break
+            if again:
+                again = again.strip().lower()
+            if again.startswith("y"):
+                break
+            elif again.startswith("n"):
+                print("Exit...")
+                return
+            else:
+                print("")
+                print("Please provide a valid answer (y/n) or (Y/N)")
         
 
 def main():
@@ -110,3 +119,7 @@ def main():
         print("\n-- Generated Tests --\n")
         print(tests)
 
+
+
+if __name__ == "__main__":
+    main()
