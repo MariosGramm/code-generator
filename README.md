@@ -38,4 +38,5 @@ You do not need to have Python installed on your system to run the installer.
 
 ## Support
 
-For questions or problems, please contact the developer or open an issue in the project's GitHub repository (if available).
+For questions or problems, please contact the developer or open an issue in the project's GitHub repository (if available). 
+You can view live demos for the installation and usage here : https://drive.google.com/drive/folders/1NK_YrLBPYSjsO22dRWKfIxMSDFMrZtoP?usp=drive_link
