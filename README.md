@@ -9,7 +9,7 @@
 1. The user enters a prompt/description into the application.
 2. The program loads the OpenAI API key from the `.env` file.
 3. An API call is made to the OpenAI service with the user's prompt.
-4. The service returns generated code, which is displayed or saved for the user.
+4. The service returns an LLM-generated code, which is displayed or saved for the user.
 
 ## Requirements
 
